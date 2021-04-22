@@ -1,0 +1,11 @@
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\bin\Debug\net5.0\CtrlShiftH.Data.deps.json
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\bin\Debug\net5.0\CtrlShiftH.Data.dll
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\bin\Debug\net5.0\ref\CtrlShiftH.Data.dll
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\bin\Debug\net5.0\CtrlShiftH.Data.pdb
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\CtrlShiftH.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\CtrlShiftH.Data.AssemblyInfoInputs.cache
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\CtrlShiftH.Data.AssemblyInfo.cs
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\CtrlShiftH.Data.csproj.CoreCompileInputs.cache
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\CtrlShiftH.Data.dll
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\ref\CtrlShiftH.Data.dll
+E:\03. My Work\CongTy\Test\boilerplate\CtrlShiftH\CtrlShiftH.Data\obj\Debug\net5.0\CtrlShiftH.Data.pdb
