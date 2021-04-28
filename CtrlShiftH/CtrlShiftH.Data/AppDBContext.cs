@@ -1,14 +1,18 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CtrlShiftH.Data.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace CtrlShiftH.Data
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
-        public AppDBContext(DbContextOptions<AppDBContext> options)
-        : base(options)
-        { }
+        public AppDBContext(DbContextOptions options) : base(options)
+        {
+
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,6 +22,8 @@ namespace CtrlShiftH.Data
 
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserToken").HasKey(x => x.UserId);
+            modelBuilder.Entity<AppUser>().ToTable("AppUser").HasKey(x => x.Id);
+            modelBuilder.Entity<AppRole>().ToTable("AppRole").HasKey(x => x.Id);
 
             //modelBuilder.ApplyConfiguration(new AppUserConfiguration());
         }

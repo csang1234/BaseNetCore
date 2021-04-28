@@ -1,12 +1,17 @@
 ﻿using CtrlShiftH.Data;
+using CtrlShiftH.Data.Entities;
+using CtrlShiftH.Data.Models.FaceBooks;
 using CtrlShiftH.Helper;
+using CtrlShiftH.Services.Catalog;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using NSwag;
 using NSwag.Generation.Processors.Security;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,6 +26,14 @@ namespace CtrlShiftH.Extensions
 
         public static void AddBusinessServices(this IServiceCollection services)
         {
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDBContext>()
+            .AddDefaultTokenProviders();
+
+            services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
+            services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
+
+            services.AddTransient<IAuthService, AuthService>();
         }
 
         public static void ConfigDbContext(this IServiceCollection services, string dbConnection)
@@ -106,6 +119,15 @@ namespace CtrlShiftH.Extensions
                 document.OperationProcessors.Add(
                     new AspNetCoreOperationSecurityScopeProcessor("JWT"));
             });
+        }
+
+        public static void ConfigOAuth(this IServiceCollection services, IConfiguration configuration)
+        {
+            var facebookAuthSettings = new FacebookAuthSettings();
+            configuration.Bind(nameof(FacebookAuthSettings), facebookAuthSettings);
+            services.AddSingleton(facebookAuthSettings);
+            services.AddHttpClient();
+            services.AddTransient<IFacebookAuthService, FacebookAuthService>();
         }
     }
 }

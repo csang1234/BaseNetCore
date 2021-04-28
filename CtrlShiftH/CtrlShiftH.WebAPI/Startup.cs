@@ -26,6 +26,7 @@ namespace CtrlShiftH
             services.ConfigDbContext(Configuration["ConnectionStrings:DbConnection"]);
             services.ConfigAuth(Configuration);
             services.ConfigSwagger();
+            services.ConfigOAuth(Configuration);
             services.AddBusinessServices();
             services.ConfigCors();
         }
